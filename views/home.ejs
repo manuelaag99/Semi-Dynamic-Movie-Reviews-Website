@@ -1,0 +1,61 @@
+
+<%- include("partial/header") %> <!--this section calls a layout established on another view--> 
+    <section class="standard-content">
+        <h1>
+            Your movie thoughts, just clicks away!
+        </h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </section>
+    <section id="reviews">
+        <div class="reviews-top">
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="cards-section">
+            <button class="slider-btn left" onclick="plusDivs(-1)">&#10094;</button>
+            <div class="cards">
+                <div class="review-card slider">
+                    <h3>Movie Title</h3>
+                    <p>I hated it so much it sucked donkey ass.</p>
+                </div>
+                <div class="review-card slider">
+                    <h3>Movie Title</h3>
+                    <p>Bad.</p>
+                </div>
+                <div class="review-card slider">
+                    <h3>Movie Title</h3>
+                    <p>Hello.</p>
+                </div>
+                <div class="review-card slider">
+                    <h3>Movie Title</h3>
+                    <p>Yeah.</p>
+                </div>
+                <div class="review-card slider">
+                    <h3>Movie Title</h3>
+                    <p>No.</p>
+                </div>
+            </div>
+            <button class="slider-btn right" onclick="plusDivs(+1)">&#10095;</button>
+            <script type="text/javascript">
+                var slideIndex = 1;
+                showDivs(slideIndex);
+                
+                function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                }
+
+                function showDivs(n) {
+                    var x = document.getElementsByClassName("slider");
+                    if (n > x.length) {slideIndex = 1} // restarts the slide sequence (if the index is greater than the last element, then the index is 1)
+                    if (n < 1) {slideIndex = x.length} ; // restarts the slide sequence (if the index is shorter than the first element, then the index is that of the last element)
+                    for (var i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    x[slideIndex-1].style.display = "block";
+                }
+            </script>
+        </div>
+    </section>
+<%- include("partial/footer") %> <!--this section calls a layout established on another view--> 
